@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Вольные стрелки | Контакты</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<!--<meta name="theme-color" content="green">-->
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<!--[if lte IE 10]>
+	<meta http-equiv="refresh" content="3; url=http://outdatedbrowser.com/ru">
+	<![endif]-->
+
+</head>
+
+<body>
+
+<!--// modal window with form-->
+<div class="modal fade" id="recordeModal" tabindex="-1" role="dialog" aria-labelledby="recordeModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="recordeModalLabel">Запись на тренировку</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body px-5">
+				<form method="post" name="training-record" id="training-record" action="/">
+					<div class="form-row">
+						<div class="col-6 col-xl-12">
+							<div class="form-group">
+								<label for="month">Выберите месяц:</label>
+								<select name="month" class="form-control" id="month">
+									<option value="">month-1</option>
+									<option value="">month-2</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-6 col-xl-12">
+							<div class="form-group">
+								<label for="day">Выберите день:</label>
+								<select name="day" class="form-control" id="day" required>
+									<option value="">Выберите день</option>
+									<option value="">day-1</option>
+									<option value="">day-2</option>
+									<option value="">day-3</option>
+									<option value="">day-4</option>
+									<option value="">day-5</option>
+									<option value="">day-6</option>
+									<option value="">day-7</option>
+									<option value="">day-8</option>
+									<option value="">day-9</option>
+									<option value="">day-10</option>
+									<option value="">day-11</option>
+									<option value="">day-12</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="count">Кол-во взрослых:</label>
+								<input id="count" name="adults-num" type="number" class="form-control" min="0" max="15" value="1" required>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="child-count">Кол-во подростков:</label>
+								<input id="child-count" name="children-num" type="number" class="form-control" min="0" max="15" value="0" required>
+							</div>
+						</div>
+					</div>
+					<div class="btn-group-toggle form-group " data-toggle="buttons">
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-1 active">
+							<input type="radio" name="training-type"  value="self" checked required>
+						</label><br>
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-2">
+							<input type="radio" name="training-type" value="with-trainer" required>
+						</label>
+						<br>
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-3">
+							<input type="radio" name="training-type" value="personal-trainer" required>
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="fio">Представьтесь пожалуйста:</label>
+						<input type="text" class="form-control" id="fio" name="name" placeholder="Ф.И.О." required>
+					</div>
+					<div class="form-group">
+						<label for="tel">Контактный телефон:</label>
+						<input type="tel" class="form-control" id="tel" name="phone" placeholder="Телефон" required>
+					</div>
+					<div class="position-relative ">
+						<div class="btn-group-toggle " data-toggle="buttons">
+							<label class="btn radio-btn btn-outline-success rounded confirm">
+								<input type="checkbox" name="confirm" id="confirm" value="confirm" required>
+							</label>
+						</div>
+						<label for="confirm" class="confirm-label">
+							Нажимая кнопку "отправить" даю согласие на обработку моих персональных данных в соответствии с <a href="policy.html" class="text-dark">политикой конфиденциальности</a>
+						</label>
+					</div>
+				</form>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
+				<button type="submit" class="btn btn-outline-success" form="training-record">Отправить</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--//navbar-->
+<!--px-1 px-sm-3-->
+<nav class="navbar navbar-expand-lg navbar-light bg-cloud-tb fixed-top ">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+			aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-brand mr-1 d-lg-none">
+		<form class="form-inline my-1 my-lg-0">
+			<span>
+				<a class="navbar-brand" href="tel:+73422021164">
+					<!--<i class="icon icon-Phone2 small"></i>-->
+					202-11-64</a>
+			</span>
+			<button class="btn btn-outline-danger my-1 my-sm-0 font-weight-bold border-2" title="Записаться на тренировку" data-toggle="modal" data-target="#recordeModal" type="button">Уже хочу!</button>
+		</form>
+	</div>
+
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item">
+				<a class="nav-link " href="index.html">Главная</a>
+			</li>
+			<!--<li class="nav-item">-->
+			<!--<a class="nav-link" href="#">Услуги</a>-->
+			<!--</li>-->
+			<li class="nav-item">
+				<a class="nav-link " href="training.html#price">Цены</a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link " href="training.html">Расписание</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Выездные тиры
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="tiry.html">Выездные тиры:</a>
+					<a class="dropdown-item" href="tiry.html#tirmini">тир "Мини"</a>
+					<a class="dropdown-item" href="tiry.html#tirclassic">тир "Классика"</a>
+					<a class="dropdown-item" href="tiry.html#tirchildy">тир "Детский"</a>
+					<a class="dropdown-item" href="tiry.html#tirvip">тир "V.I.P."</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="3d_archery.html">3D Archery</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="about.html">О нас</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="contacts.html">Контакты</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="icon icon-Search"></span>
+				</a>
+				<div class="dropdown-menu pl-2 " aria-labelledby="navbarDropdown">
+					<form name="search" class="form-inline my-2 my-lg-0 flex-nowrap">
+						<input class="form-control mr-sm-2 bg-transparent" type="search" name="search" placeholder="Поиск по сайту" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" >Поиск</button>
+					</form>
+				</div>
+			</li>
+
+		</ul>
+		<a class="navbar-brand  d-lg-inline-block d-none" href="tel:+73422021164">
+			<!--<i class="icon icon-Phone2 small"></i><i class="icon icon-Phone small"></i>--> 202-11-64
+		</a>
+		<form class="form-inline my-1 my-lg-0 d-lg-flex d-none">
+			<button class="btn btn-outline-danger my-1 my-sm-0 font-weight-bold border-2" title="Записаться на тренировку" data-toggle="modal" data-target="#recordeModal" type="button">Уже хочу!</button>
+		</form>
+	</div>
+</nav>
+
+<!--//header-->
+<header class="contacts-header">
+	<div class="bg-header">
+		<div class="header-banner mt-5 pt-5 pb-2">
+			<div class="title row justify-content-center mx-0 pb-5">
+				<div class="logo">
+					<img src="img/logo.png" alt="logo" width="100" class="img-fluid">
+				</div>
+				<div class="text-center">
+					<h2 class=" fa-title">Вольные стрелки</h2>
+				</div>
+			</div>
+			<h1 class="my-5 text-light text-center fa-sub-title">Контактная информация</h1>
+		</div>
+	</div>
+</header>
+<section class="container">
+<h2 class="text-center text-success pt-5">Для связи с нами используйте:</h2>
+
+	<div class="row py-3">
+		<div class="col-12 col-md-6 col-lg-4 order-md-1">
+			<div class="row">
+				<div class="col-12 col-sm-12 mt-4">
+					<h6 class="mb-4">Наши телефоны:</h6>
+					<ul>
+						<li><a href="tel:+734222021164" class="nav-link text-success" title="Позвонить">202.11.64</a></li>
+						<li><a href="tel:+79824811164" class="nav-link text-success" title="Позвонить">8.982.48.111.64
+							Екатерина</a></li>
+						<li><a href="tel:+79129877703" class="nav-link text-success" title="Позвонить">8.912.98.777.03
+							Алексей</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-12 mt-4">
+					<h6 class="mb-4">Электронную почту:</h6>
+					<ul>
+						<li>
+							<a href="mailto:cat.zakamsky@gmail.com" class="nav-link text-success" title="Напишите нам">cat.zakamsky@gmail.com</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 order-md-0">
+			<img src="img/contacts_watchingman.jpg" alt="" class="img-fluid">
+		</div>
+		<div class="col-12 col-lg-4 order-md-1">
+			<div class="row">
+				<div class="col-12 col-sm-6 col-lg-12 mt-4">
+					<h6 class="mb-4">Форму обратной связи:</h6>
+					<ul>
+						<li><a href="index.html#form" class="nav-link text-success">Ссылка на форму</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-12 mt-4">
+					<div class="row">
+						<div class="col-12">
+							<h6 class="mb-4">Социальные сети: </h6>
+						</div>
+						<div class="col-3 px-4">
+							<a href="https://vk.com/freearchers" target="_blank"
+								class="nav-link p-0 text-success rounded-circle social-key">
+								<img src="img/social-vk.png" alt="vk" class="img-fluid">
+							</a>
+						</div>
+						<div class="col-3 px-4">
+							<a href="https://facebook.com/freearchers" target="_blank"
+								class="nav-link p-0 text-success rounded-circle social-key">
+								<img src="img/social-fb.png" alt="" class="img-fluid">
+							</a>
+						</div>
+						<div class="col-3 px-4">
+							<a href="https://www.instagram.com/freearchers" target="_blank"
+								class="nav-link p-0 text-success rounded-circle social-key">
+								<img src="img/social-ig.png" alt="" class="img-fluid">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 mt-5 order-md-2">
+			<h3>Или ищите нас по адресу:</h3>
+			<p>Г. Пермь</p>
+			<p>Улица Светлогорская 18 (вход через калитку со стороны т.ц. "Браво 2")</p>
+		</div>
+	</div>
+</section>
+<section class="container-fluid map p-0" id="map">
+	<div class="bg-header pt-5">
+		<div class="container py-5">
+			<div class="row ">
+				<div class="col-12 py-2">
+					<h3 class="fa-sub-title py-2">Г. Пермь, Улица Светлогорская 18 (вход через калитку со стороны т.ц. "Браво 2"):</h3>
+				</div>
+				<div class="col-12  p-0 ">
+
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2111.9415215870117!2d56.0263081160283!3d58.03961718122629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8c0be32580553%3A0x30375c82dbfca40a!2z0JLQvtC70YzQvdGL0LUg0KHRgtGA0LXQu9C60LgsINC60LvRg9CxINGB0YLRgNC10LvRjNCx0Ysg0LjQtyDQu9GD0LrQsA!5e0!3m2!1sru!2sru!4v1527271240348" width="100%" height="600" style="border:0" allowfullscreen class="air-border rounded"></iframe>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<footer class="bg-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-lg-3 py-4 px-0">
+				<div class="row w-100 px-3">
+					<div class="col-12 footer-logo">
+						<a href="index.html" title="На главную"><img src="img/logo_footer.png" alt="logo" class="img-fluid footer-logo"></a>
+					</div>
+					<div class="col-12 py-3">
+						<div class="row">
+							<div class="col-12">
+								<h6 class="py-3">Мы в соцсетях: </h6>
+							</div>
+							<div class="col-3">
+								<a href="https://vk.com/freearchers" target="_blank" class="nav-link p-0 text-success rounded-circle social-key">
+									<img src="img/social-vk.png" alt="vk" class="img-fluid">
+								</a>
+							</div>
+							<div class="col-3">
+								<a href="https://facebook.com/freearchers" target="_blank" class="nav-link p-0 text-success rounded-circle social-key">
+									<img src="img/social-fb.png" alt="" class="img-fluid">
+								</a>
+							</div>
+							<div class="col-3">
+								<a href="https://www.instagram.com/freearchers" target="_blank" class="nav-link p-0 text-success rounded-circle social-key">
+									<img src="img/social-ig.png" alt="" class="img-fluid">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3 py-4 px-0">
+				<!--ul.nav.flex-column>(li.nav-item>a.nav-link.text-success{punkt-$})*5-->
+				<ul class="nav flex-column">
+					<li class="nav-item"><a href="training.html" class="nav-link"><h6 class=" m-0">Тренировки</h6></a></li>
+					<li class="nav-item"><a href="training.html" class="nav-link text-success">Расписание</a></li>
+					<li class="nav-item"><a href="training.html#price" class="nav-link text-success">Цены</a></li>
+					<li class="nav-item"><a href="training.html#abonement" class="nav-link text-success">Абонементы</a></li>
+					<li class="nav-item"><a href="training.html#giftcard" class="nav-link text-success">Подарочные сертификаты</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3 py-4 px-0">
+				<ul class="nav flex-column">
+					<li class="nav-item"><a href="tiry.html" class="nav-link"><h6 class="m-0">Выездные тиры</h6></a></li>
+					<li class="nav-item"><a href="tiry.html#tirmini" class="nav-link text-success">"Мини"</a></li>
+					<li class="nav-item"><a href="tiry.html#tirclassic" class="nav-link text-success">"Классика"</a></li>
+					<li class="nav-item"><a href="tiry.html#tirchildy" class="nav-link text-success">"Детский"</a></li>
+					<li class="nav-item"><a href="tiry.html#tirvip" class="nav-link text-success">"V.I.P"</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3 py-4 px-0">
+				<address class="m-0 p-0">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a href="contacts.html" class="h6 text-white text-uppercase nav-link m-0">Контакты</a></li>
+						<li class="nav-item"><a href="training.html#map" class="nav-link text-success" title="Смотреть на карте">г.Пермь</a></li>
+						<li class="nav-item"><a href="training.html#map" class="nav-link text-success" title="Смотреть на карте">ул. Светлогорская 18</a></li>
+						<li class="nav-item"><a href="tel:+73422021164" class="nav-link text-success" title="Позвонить">202-11-64</a></li>
+						<li class="nav-item">
+							<a href="mailto:cat.zakamsky@gmail.com" class="nav-link text-success" title="Напишите нам">cat.zakamsky@gmail.com</a>
+						</li>
+					</ul>
+				</address>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row py-2">
+			<div class="col-12 col-sm-auto pl-sm-5">
+				<div class="text-success nav-link px-0">
+					&copy; Вольные стрелки 2018г.
+				</div>
+			</div>
+			<div class="d-none d-sm-inline-block p-0 col-auto border-left border-success"></div>
+			<div class="col-12 col-sm-auto px-0">
+				<div class="policy px-0">
+					<a href="policy.html" title="Политика конфиденциальности" class="text-success nav-link text-truncate">Политика конфиденциальности</a>
+				</div>
+			</div>
+			<div class="col ml-auto d-flex justify-content-end">
+
+					<a href="#top" class="text-center nav-link btn btn-outline-success rounded-circle to-top">&#8657;</a>
+
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

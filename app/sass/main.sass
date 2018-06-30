@@ -1,0 +1,314 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	//color: #042007
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+h3, h2, h1, .h3, .h2, .h1
+	margin-bottom: 1rem
+
+b, strong
+	font-weight: bold
+
+%white-text
+	color: rgb(255, 255, 255)
+	text-shadow: 0.2rem 0.2rem 0.6rem rgba(4, 32, 7, 0.8)
+.air-border
+	box-shadow: 0 0 0 0.3rem rgba(255, 255, 255, 0.45)
+
+.border-2
+	border-width: 2px
+
+.abbr
+	text-transform: uppercase
+
+// -- modal
+
+//.radio-btn
+//	.btn
+//		margin-bottom: 0.6rem
+//		width: 1rem
+//		height: 1rem
+//		padding: 6px
+//		&::after
+//			position: relative
+//			top: -0.7rem
+//			left: 1rem
+//			color: #000
+//	.radio-1::after
+//		content: 'Самостоятельно'
+//	.radio-2::after
+//		content: 'С тренером'
+//	.radio-3::after
+//		content: 'Индивидуально с тренером'
+.radio-btn
+	margin-bottom: 0.6rem
+	width: 1rem
+	height: 1rem
+	padding: 6px
+	&::after
+		position: relative
+		top: -0.7rem
+		left: 1rem
+		color: #000
+	&.radio-1::after
+		content: 'Самостоятельно'
+	&.radio-2::after
+		content: 'С тренером'
+	&.radio-3::after
+		content: 'Индивидуально с тренером'
+	//&.confirm::after
+	//	font-size: 0.6rem
+	//	width: 100%
+	//	text-wrap: normal
+	//	content: 'Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных'
+
+.confirm-label
+	position: absolute
+	top: 0
+	left: 2rem
+	font-size: 0.6rem
+
+.bg-cloud-tb
+	//background: linear-gradient(to top, transparent 5%, rgba(255, 255, 255, 0.3),  rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.85) )
+	background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.3) 0.3rem,  rgba(255, 255, 255, 1) 0.65rem, rgba(255, 255, 255, 1))
+	&.navbar .nav-link,
+	&.navbar .dropdown-item,
+	&.navbar .navbar-brand,
+	&.navbar .navbar-toggler-icon
+		color: $success
+
+
+//.bg-cloud-tb:hover
+	background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.3) 6%,  rgba(255, 255, 255, 1) 18%, rgba(255, 255, 255, 1))
+
+
+
+//--header
+
+.index-header
+	padding-top: 1px
+	height: 38rem
+	background: #28a745 url(../img/header.jpg) center center / cover no-repeat
+	//background: url(../img/header_bottom.png) center bottom / 100% auto no-repeat, url(../img/header_top_only_slim.png) center top / 100% auto no-repeat, url(../img/header-green.jpg) center center / cover no-repeat
+
+.training-header
+	//height: 25rem
+	background: #28a745 url(../img/training_header.jpg) center center / cover no-repeat
+
+.price-header
+	background: #28a745 url(../img/price_header2.jpg) center / cover no-repeat
+
+.tiry-header
+	background: #28a745 url(../img/tiry_header.jpg) center center / cover no-repeat
+
+.threed-header
+	background: #28a745 url(../img/3d_header.jpg) center center / cover no-repeat
+
+.about-header
+	background: #28a745 url(../img/about_header.jpg) center center / cover no-repeat
+
+.contacts-header
+	background: #28a745 url(../img/contacts_header.jpg) center center / cover no-repeat
+
+.bg-header
+	position: relative
+	min-height: 25rem
+	padding: 1px
+	height: 100%
+	//background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9) 1%, rgba(11, 98, 21, 0.5) 3%, rgba(11, 98, 21, 0.6) 97%, rgba(255, 255, 255, 0.9) 99%, rgba(255, 255, 255, 1)) //, url(../img/header_bottom.png) center bottom / 100% auto no-repeat
+	background: transparent linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9) 1%, rgba(90, 287, 50, 0.3) 3%, rgba(90, 287, 50, 0.3) 97%, rgba(255, 255, 255, 0.9) 99%, rgba(255, 255, 255, 1))
+	//background: transparent linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9) 1%, rgba(40, 167, 69, 0.4) 3%, rgba(40, 167, 69, 0.4) 97%, rgba(255, 255, 255, 0.9) 99%, rgba(255, 255, 255, 1))
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		height: 50%
+		width: 100%
+		background: url(../img/header_top_only_slim.png) center top / 100% auto no-repeat
+		z-index: 1
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		height: 50%
+		width: 100%
+		background: transparent url(../img/header_bottom.png) center bottom / 100% auto no-repeat
+		z-index: 1
+
+
+
+.title
+	.logo
+		display: inline-block
+		img
+			filter: drop-shadow(0.2rem 0.2rem 0.6rem rgba(4, 32, 7, 0.8))
+
+
+.fa-title
+	//display: inline-block
+	font-size: 5rem
+	font-family: "Book Antiqua", "Palatino Linotype", serif
+	color: #ffffff
+	@extend %white-text
+.fa-sub-title
+	@extend %white-text
+
+//.header-banner
+//	h3, h2, h1, .h3, .h2, .h1
+//		//margin-top: 0
+//		//padding-top: 0
+//		@extend %white-text
+//		//text-shadow: 0.2rem 0.2rem 0.6rem rgba(4, 32, 7, 0.8)
+
+
+//--advantages
+.advantages
+	p
+		font-size: 0.88rem
+
+
+.text-block
+	min-height: 25rem
+	margin-top: 2rem
+
+.img-block
+	position: relative
+	.img-border
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		width: 100%
+		&.left
+			left:	0
+
+//--formblock
+.feedback
+	.form
+		position: relative
+		z-index: 5
+		background: rgba(255, 255, 255, 0.95)
+	h2
+		@extend %white-text
+
+//--footer
+
+footer
+	background-color: #003300
+	h6
+		color: white
+		text-transform: uppercase
+	.footer-logo
+		filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.05))
+	.to-top
+		position: fixed
+		bottom: 1rem
+		right: 1rem
+		z-index: 900
+		width: 2.5rem
+		height: 2.5rem
+		padding: 0.4rem 0.5rem 0.6rem
+		line-height: 1.5rem
+		font-size: 1.5rem
+
+
+	.social-key
+		&:hover
+			background-color: rgba(255, 255, 255, 0.15)
+			box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.15)
+		&:active
+			background-color: rgba(0, 0, 0, 0.2)
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2)
+
+// training
+
+.map
+	//height: 65vh
+	background: #28a745 url(../img/bg_nature.jpg) center center / cover no-repeat
+	//zindex
+		height: 30rem
+		padding-bottom: -10px
+	iframe
+		position: relative
+		z-index: 5
+
+// 3d archery
+.bow-block
+	position: relative
+	overflow: hidden
+	&:hover .bow_title,
+	&:hover .bow-description
+		transform: translate(0, 0)
+	.bow_title
+		position: absolute
+		top: 0
+		height: 20%
+		width: 100%
+		display: flex
+		border-bottom: #ffffff solid 1px
+		text-align: center
+		color: #ffffff
+		background-color: rgba(00, 51, 00, 0.9)
+		transform: translate(0, -102%)
+		//transform: translate(0, -7rem)
+		transition: all 0.3s
+		h5
+			margin: auto
+	.bow-description
+		position: absolute
+		bottom: 0
+		height: 80%
+		padding: 1rem 1.5rem
+		color: #ffffff
+		background-color: rgba(00, 51, 00, 0.9)
+		transform: translate(0, 102%)
+		//transform: translate(0, 18rem)
+		transition: all 0.3s
+
+
+
+// media
+
+@media only screen and (max-width: 992px)
+	.bow-block .bow-description
+		padding: 0.8rem 1.2rem
+		font-size: 0.9rem
+	nav.navbar
+		padding-top: 0
+
+@media only screen and (max-width: 388px)
+	.fa-title, .display-4
+		font-size: 3rem !important
+		line-height: 3rem
+	.fa-sub-title
+		font-size: 1.5rem
+	.bow-block .bow-description
+		padding: 0.6rem 1rem
+		font-size: 0.85rem
+
+
+@import "media" // Always at the end

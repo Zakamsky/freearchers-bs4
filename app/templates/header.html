@@ -1,0 +1,173 @@
+<!--// modal window with form-->
+<div class="modal fade" id="recordeModal" tabindex="-1" role="dialog" aria-labelledby="recordeModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="recordeModalLabel">Запись на тренировку</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body px-5">
+				<form method="post" name="training-record" id="training-record" action="/">
+					<div class="form-row">
+						<div class="col-6 col-xl-12">
+							<div class="form-group">
+								<label for="month">Выберите месяц:</label>
+								<select name="month" class="form-control" id="month">
+									<option value="">month-1</option>
+									<option value="">month-2</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-6 col-xl-12">
+							<div class="form-group">
+								<label for="day">Выберите день:</label>
+								<select name="day" class="form-control" id="day" required>
+									<option value="">Выберите день</option>
+									<option value="">day-1</option>
+									<option value="">day-2</option>
+									<option value="">day-3</option>
+									<option value="">day-4</option>
+									<option value="">day-5</option>
+									<option value="">day-6</option>
+									<option value="">day-7</option>
+									<option value="">day-8</option>
+									<option value="">day-9</option>
+									<option value="">day-10</option>
+									<option value="">day-11</option>
+									<option value="">day-12</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="count">Кол-во взрослых:</label>
+								<input id="count" name="adults-num" type="number" class="form-control" min="0" max="15" value="1" required>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="child-count">Кол-во подростков:</label>
+								<input id="child-count" name="children-num" type="number" class="form-control" min="0" max="15" value="0" required>
+							</div>
+						</div>
+					</div>
+					<div class="btn-group-toggle form-group " data-toggle="buttons">
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-1 active">
+							<input type="radio" name="training-type"  value="self" checked required>
+						</label><br>
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-2">
+							<input type="radio" name="training-type" value="with-trainer" required>
+						</label>
+						<br>
+						<label class="btn radio-btn btn-outline-success rounded-circle radio-3">
+							<input type="radio" name="training-type" value="personal-trainer" required>
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="fio">Представьтесь пожалуйста:</label>
+						<input type="text" class="form-control" id="fio" name="name" placeholder="Ф.И.О." required>
+					</div>
+					<div class="form-group">
+						<label for="tel">Контактный телефон:</label>
+						<input type="tel" class="form-control" id="tel" name="phone" placeholder="Телефон" required>
+					</div>
+					<div class="position-relative ">
+						<div class="btn-group-toggle " data-toggle="buttons">
+							<label class="btn radio-btn btn-outline-success rounded confirm">
+								<input type="checkbox" name="confirm" id="confirm" value="confirm" required>
+							</label>
+						</div>
+						<label for="confirm" class="confirm-label">
+							Нажимая кнопку "отправить" даю согласие на обработку моих персональных данных в соответствии с <a href="policy.html" class="text-dark">политикой конфиденциальности</a>
+						</label>
+					</div>
+				</form>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
+				<button type="submit" class="btn btn-outline-success" form="training-record">Отправить</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--//navbar-->
+<!--px-1 px-sm-3-->
+<nav class="navbar navbar-expand-lg navbar-light bg-cloud-tb fixed-top ">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+			aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-brand mr-1 d-lg-none">
+		<form class="form-inline my-1 my-lg-0">
+			<span>
+				<a class="navbar-brand" href="tel:+73422021164">
+					<!--<i class="icon icon-Phone2 small"></i>-->
+					202-11-64</a>
+			</span>
+			<button class="btn btn-outline-danger my-1 my-sm-0 font-weight-bold border-2" title="Записаться на тренировку" data-toggle="modal" data-target="#recordeModal" type="button">Уже хочу!</button>
+		</form>
+	</div>
+
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item">
+				<a class="nav-link " href="index.html">Главная</a>
+			</li>
+			<!--<li class="nav-item">-->
+			<!--<a class="nav-link" href="#">Услуги</a>-->
+			<!--</li>-->
+			<li class="nav-item">
+				<a class="nav-link " href="training.html#price">Цены</a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link " href="training.html">Расписание</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Выездные тиры
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="tiry.html">Выездные тиры:</a>
+					<a class="dropdown-item" href="tiry.html#tirmini">тир "Мини"</a>
+					<a class="dropdown-item" href="tiry.html#tirclassic">тир "Классика"</a>
+					<a class="dropdown-item" href="tiry.html#tirchildy">тир "Детский"</a>
+					<a class="dropdown-item" href="tiry.html#tirvip">тир "V.I.P."</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="3d_archery.html">3D Archery</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="about.html">О нас</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="contacts.html">Контакты</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="icon icon-Search"></span>
+				</a>
+				<div class="dropdown-menu pl-2 " aria-labelledby="navbarDropdown">
+					<form name="search" class="form-inline my-2 my-lg-0 flex-nowrap">
+						<input class="form-control mr-sm-2 bg-transparent" type="search" name="search" placeholder="Поиск по сайту" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" >Поиск</button>
+					</form>
+				</div>
+			</li>
+
+		</ul>
+		<a class="navbar-brand  d-lg-inline-block d-none" href="tel:+73422021164">
+			<!--<i class="icon icon-Phone2 small"></i><i class="icon icon-Phone small"></i>--> 202-11-64
+		</a>
+		<form class="form-inline my-1 my-lg-0 d-lg-flex d-none">
+			<button class="btn btn-outline-danger my-1 my-sm-0 font-weight-bold border-2" title="Записаться на тренировку" data-toggle="modal" data-target="#recordeModal" type="button">Уже хочу!</button>
+		</form>
+	</div>
+</nav>

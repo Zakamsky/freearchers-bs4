@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>TEST</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="../img/favicon/favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<!--<meta name="theme-color" content="green">-->
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="../css/main.min.css">
+
+	<!--[if lte IE 10]>
+	<meta http-equiv="refresh" content="3; url=http://outdatedbrowser.com/ru">
+	<![endif]-->
+</head>
+<body>
+
+<div class="btns m-5 d-flex flex-column justify-content-between">
+	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#tiryModal" data-addcost="1000" data-cost="5000" data-tir="Мини">Заказать тир "Мини"</button>
+	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#tiryModal" data-addcost="2000" data-cost="7000" data-tir="Детский">Заказать тир "Детский"</button>
+	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#tiryModal" data-addcost="2000" data-cost="8000" data-tir="Классический">Заказать тир "Классический"</button>
+	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#tiryModal" data-addcost="2000" data-cost="12000"  data-tir="V.I.P">Заказать тир "V.I.P"</button>
+</div>
+
+<section class="modal-box">
+
+	<div class="modal fade" id="tiryModal" tabindex="-1" role="dialog" aria-labelledby="tiryModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="tiryModalLabel">Заказ тира</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<form method="post" name="tir-order" id="tir-order">
+						<!--<div class="form-group">-->
+							<!--<label for="recipient-name" class="col-form-label" >Выбран тир:</label>-->
+							<input type="hidden" class="tir form-control text-success" id="recipient-name" readonly>
+						<!--</div>-->
+						<div class="form-group">
+							<label for="cost" class="col-form-label">Базовая цена: <br><span class="small">(за два часа)</span>:</label>
+							<input type="text" class="form-control text-success" id="cost" name="cost" readonly>
+						</div>
+						<div class="form-group">
+							<label for="addcost" class="col-form-label">за доп час:</label>
+							<input type="text" class="form-control text-success" id="addcost" name="addcost" readonly>
+						</div>
+						<div class="form-group">
+							<label for="hours" class="col-form-label">Всего часов:</label>
+							<input type="number" min="2" max="8" step="1" value="2" class="form-control" id="hours" name="hours">
+						</div>
+						<div class="form-group">
+							<label for="date" class="col-form-label">Дата:</label>
+							<input type="date"  class="form-control" id="date" name="date" required>
+						</div>
+						<div class="form-group">
+							<label for="time" class="col-form-label">Время начала:</label>
+							<input type="time"  class="form-control" id="time" name="time" required>
+						</div>
+						<div class="form-group">
+							<label for="geo">укажите место проведения:</label>
+							<input type="text" class="form-control" id="geo" name="geo" placeholder="место проведения">
+						</div>
+						<div class="form-group">
+							<label for="fio">Представьтесь пожалуйста:</label>
+							<input type="text" class="form-control" id="fio" name="name" placeholder="Ф.И.О." required>
+						</div>
+						<div class="form-group">
+							<label for="tel">Контакный телефон:</label>
+							<input type="tel" class="form-control" id="tel" name="phone" placeholder="Телефон" required>
+						</div>
+						<div class="position-relative ">
+							<div class="btn-group-toggle " data-toggle="buttons">
+								<label class="btn radio-btn btn-outline-success rounded confirm">
+									<input type="checkbox" name="confirm" id="confirm" value="confirm" required>
+								</label>
+							</div>
+							<label for="confirm" class="confirm-label">
+								Нажимая кнопку "отправить" даю согласие на обработку моих персональных данных в соответствии с <a href="../policy.html" class="text-dark">политикой конфиденциальности</a>
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Закрыть</button>
+					<button type="submit" form="tir-order" class="btn btn-outline-success">Заказать</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<script>
+    $('#tiryModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var tir = button.data('tir') // Extract info from data-* attributes
+        var cost = button.data('cost') // Extract info from data-* attributes
+        var addcost = button.data('addcost') // Extract info from data-* attribut
+//        var range = $('#range').slider("option", "value")
+
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('Заказ тира ' + tir)
+//        modal.find('.modal-body .valrange').text(range)
+        modal.find('.modal-body .tir').val(tir)
+        modal.find('.modal-body #cost').val(cost)
+        modal.find('.modal-body #addcost').val(addcost)
+
+    })
+</script>
+<script src="../js/scripts.min.js"></script>
+</body>
+</html>
